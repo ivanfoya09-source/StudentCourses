@@ -11,12 +11,7 @@ def register(request):
         form = StudentRegistrationForm(request.POST)
         formset = CourseFormSet(request.POST)
 
-        print("FORM ERRORS:", form.errors)
-        print("FORMSET ERRORS:", formset.errors)
-        print("FORMSET NON FORM ERRORS:", formset.non_form_errors())
-
         if form.is_valid() and formset.is_valid():
-            print("ВСЕ ВАЛІДНО")
 
             user = form.save()
 
