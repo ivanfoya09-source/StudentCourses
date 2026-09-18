@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація</title>
+</head>
+<body>
+
+<h1>Реєстрація учня</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <h2>Вибір курсів</h2>
+
+    {{ formset.management_form }}
+
+    {% for course_form in formset %}
+        {{ course_form.as_p }}
+    {% endfor %}
+
+    <button type="submit">Зареєструватися</button>
+</form>
+
+</body>
+</html>
